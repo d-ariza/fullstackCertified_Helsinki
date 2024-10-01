@@ -31,7 +31,7 @@ function Total(props) {
   // console.log(props)
   return (
     <>
-      <p>Number of exercises {props.total}</p>
+      <p>Number of exercises {props.part[0].exercises + props.part[1].exercises + props.part[2].exercises}</p>
     </>
   )
 }
@@ -56,7 +56,7 @@ export default function App() {
     <>
       <Header course={course}/>
       <Contents part={parts}/>
-      <Total total={parts[0].exercises + parts[1].exercises + parts[2].exercises}/>
+      <Total part={parts}/>
     </>
   )
 }
