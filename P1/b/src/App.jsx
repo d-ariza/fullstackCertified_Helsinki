@@ -20,9 +20,9 @@ function Contents(props) {
   // console.log(props);
   return (
     <>
-      <Part name={props.part.part1.name} exercises={props.part.part1.exercises}/>
-      <Part name={props.part.part2.name} exercises={props.part.part2.exercises}/>
-      <Part name={props.part.part3.name} exercises={props.part.part3.exercises}/>
+      <Part name={props.part[0].name} exercises={props.part[0].exercises}/>
+      <Part name={props.part[1].name} exercises={props.part[1].exercises}/>
+      <Part name={props.part[2].name} exercises={props.part[2].exercises}/>
     </>
   )
 }
@@ -38,28 +38,25 @@ function Total(props) {
 
 export default function App() {
   const course = 'Half stack application development';
-  const parts = {
-    part1:
+  const parts = [
       {
         name: 'Fundamentals of react',
         exercises: 10
       },
-    part2:
       {
         name: 'Using props to pass data',
         exercises: 7
       },
-    part3:
       {
         name: 'State of a component',
         exercises: 14
       },
-  }
+  ]
   return (
     <>
       <Header course={course}/>
       <Contents part={parts}/>
-      <Total total={parts.part1.exercises + parts.part2.exercises + parts.part3.exercises}/>
+      <Total total={parts[0].exercises + parts[1].exercises + parts[2].exercises}/>
     </>
   )
 }
